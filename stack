@@ -1,0 +1,61 @@
+using System;
+
+namespace Examples{
+ 
+    public class Stack{
+
+        //State
+        //Array of Integers
+		static int max = 10;
+		int[] stk = new int[max];
+		int top = 0;
+		
+        //public void Push(Stack this,int item)
+        public void Push(int item){  
+			
+			if(top >= max ){
+				Console.WriteLine("Stack Overflow");
+			}
+			else
+				stk[++top] = item;
+        }
+
+        public int Pop(){  
+			if (top < 0)
+            {
+                Console.WriteLine("Stack Underflow");
+                return 0;
+            }
+            else
+            {
+                int value = stk[top--];
+                return value;
+            }
+		}
+
+        //public void Clear(){}
+    }
+
+    public class Program{
+
+    public static  void Main(){
+
+        Stack s1=new Stack();
+        s1.Push(10);// Stack.Push(s1,10);
+        s1.Push(200);
+        s1.Push(25);
+        s1.Push(45);
+
+   		int topItem=s1.Pop();
+        Console.WriteLine(topItem); //45
+        topItem=s1.Pop();
+        Console.WriteLine(topItem);//25
+        topItem=s1.Pop();
+        Console.WriteLine(topItem);//200
+        topItem=s1.Pop();
+        Console.WriteLine(topItem);//10
+    }
+
+    }
+ 
+}
