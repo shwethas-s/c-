@@ -7,5 +7,5 @@ Indexer
 Assignment 1 - String Calculator
 Using functions as property
 Threads
-Asynchronous execution
+Asynchronous execution (polling and callback)
 Function as arguement and return value
