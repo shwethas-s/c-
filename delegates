@@ -1,0 +1,23 @@
+using System;
+
+public delegate void SortCommand(string[] item);
+					
+public class Program
+{
+	
+	public static void BubbelSort(string[] item) {Console.WriteLine("Bubble Sort");}
+	
+	public static void QuickSort(string[] item) {Console.WriteLine("Quick Sort");}
+	
+	public static void BinarySearch(string[] item, SortCommand funObj){
+	
+		funObj.Invoke(item);
+	}
+	public static void Main()
+	{
+		Console.WriteLine("Hello World");
+		SortCommand bubblesortfunobj = new SortCommand(Program.BubbelSort);
+		Program.BinarySearch(item, bubblesortfunobj);
+		
+	}
+}
