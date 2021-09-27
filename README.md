@@ -10,4 +10,6 @@ Threads
 Asynchronous execution (polling and callback)
 event drivesn program
 Function as arguement and return value
+delegate (command class) - one command class for each signature of target function
+
 
