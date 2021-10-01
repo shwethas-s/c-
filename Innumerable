@@ -1,0 +1,39 @@
+ public static class ExtensionMethods
+    {
+
+        public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            //steps
+            List<T> _resultList = new List<T>();
+ 
+           var iterator= source.GetEnumerator();
+            foreach (T item in source) {
+                if (predicate.Invoke(item))
+                {
+                    _resultList.Add(item);
+                }
+            }
+           /* try
+            {
+                while (iterator.MoveNext())
+                {
+                    T cuurentItem = iterator.Current;
+                    if (predicate.Invoke(cuurentItem))
+                    {
+                        _resultList.Add(cuurentItem);
+                    }
+                }
+            }
+            finally
+            {
+                if(iterator is IDisposable)
+                {
+                    iterator.Dispose();
+                }
+            }*/
+ 
+            return _resultList;
+        }
+ 
+    }
+}
